@@ -2,20 +2,20 @@
   <h1 class="title">Générateur de mot de passe</h1>
   <div class="password">
     <h2 class="subtitle">Mot de passe generé</h2>
-    <div class="group"><span class="password-text">123</span>
+    <div class="group"><span class="password-text">{{password}}</span>
       <div class="password-tools">
-        <img src="../assets/copy.png" width="24px" height="24px">
-        <img src="../assets/reload.png" width="24px" height="24px">
+        <img (click)="copyPassword()" src="../assets/copy.png" width="24px" height="24px">
+        <img (click)="generatePassword()" src="../assets/reload.png" width="24px" height="24px">
       </div>
     </div>
   </div>
   <div class="character-length">
     <h2 class="subtitle">Nombre de caractères
-    <div class="character-counter">23</div>
+    <div class="character-counter" id="length">{{ characterLength }}</div>
     </h2>
     <div class="group">
-      <span class="group-text">0</span>
-      <input type="range" class="slide">
+      <span class="group-text">6</span>
+      <input min="6" max="32" type="range" class="slide" (input)="onSlideChange($event)">
       <span class="group-text">32</span>
     </div>
   </div>
@@ -23,21 +23,17 @@
     <h2 class="subtitle">Réglages</h2>
     <div class="group">
       <span class="group-text">Inclure lettres majuscules</span>
-      <input class="checkbox" type="checkbox" name="uppercase">
-    </div>
-    <div class="group">
-      <span class="group-text">Inclure lettres minuscules</span>
-      <input class="checkbox" type="checkbox" name="lowcase">
+      <input (click)="generateWithUppercase()" class="checkbox" type="checkbox" name="uppercase">
     </div>
     <div class="group">
       <span class="group-text">Inclure chiffres</span>
-      <input class="checkbox" type="checkbox" name="number">
+      <input (click)="generateWithNumber()" class="checkbox" type="checkbox" name="number">
     </div>
     <div class="group">
       <span class="group-text">Inclure symboles</span>
-      <input class="checkbox" type="checkbox" name="symbol">
+      <input (click)="generateWithSymbol()" class="checkbox" type="checkbox" name="symbol">
     </div>
 
   </div>
-    <button class="action-button">Générer mot de passe</button>
+    <button (click)="generatePassword()" class="action-button">Générer mot de passe</button>
 </div>
