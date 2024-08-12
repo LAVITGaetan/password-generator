@@ -1,1 +1,133 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: roboto;
+    src: url(./assets/roboto/Roboto-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+:root {
+    --clr-main: #090212;
+    --clr-secondary: #26173B;
+    --clr-accent: #cd5ffe;
+    --clr-light: #704F8a;
+    --clr-grey: #cecece;
+}
+
+body {
+    background: var(--clr-main);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: roboto;
+}
+
+.container {
+    width: 500px;
+    padding: 48px;
+}
+
+
+.title {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-grey);
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--clr-secondary);
+    padding: 16px;
+    margin-bottom: 24px;
+    font-size: 15px;
+    color: var(--clr-grey);
+}
+
+.password-tools {
+    display: flex;
+    justify-content: space-between;
+    width: 56px;
+}
+
+.password-tools img {
+   cursor: pointer;
+}
+
+.character-counter {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--clr-accent);
+}
+
+.slide {
+    width: 100%;
+    margin: 0 24px;
+    appearance: none;
+        background: var(--clr-accent);
+        height: 8px;
+        border-radius: 8px;
+}
+
+
+/* Style du curseur (Thumb) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px; 
+    background: #fff;
+    cursor: pointer; 
+    border-radius: 50%; 
+  }
+  
+  /* Curseur sur Firefox */
+  input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px; 
+    background: #fff;
+    cursor: pointer; 
+    border-radius: 50%; 
+  }
+
+.checkbox {
+    cursor: pointer;
+}
+
+.action-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--clr-accent);
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+
+@media screen and (max-width:600px) {
+    
+.container {
+    width: 100%;
+    padding: 48px;
+}
+
+}
